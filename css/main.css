@@ -1,0 +1,308 @@
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-color: #323c4e;
+}
+
+.calculator {
+  position: relative;
+  width: 800px;
+  height: 700px;
+  margin-top: 5.21vw;
+  background-color: snow;
+  opacity: 0.99;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  grid-template-areas:
+    "t t t t"
+    "i i i i"
+    "m m m en"
+    "n1 n2 n3 o0"
+    "n4 n5 n6 o1"
+    "n7 n8 n9 o2"
+    "n0 e d o3"
+    "bo bc pi o4"
+    "s c ex lg";
+  -ms-grid-columns: 1fr 3px 1fr 3px 1fr 3px 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 0.1fr 5px 2.5fr 5px 1.5fr 5px 1fr 5px 1fr 5px 1fr 5px 1fr 5px
+    1fr 5px 1fr;
+  grid-template-rows: 0.1fr 2.5fr 1.5fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-row-gap: 5px;
+  grid-column-gap: 3px;
+}
+
+button,
+.title,
+.inputField,
+.message,
+.left-info,
+.right-info {
+  font-family: "Roboto", "Open Sans", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-size: 20px;
+  color: #242735;
+  letter-spacing: 0.05em;
+  border: 0;
+  border-bottom: 5px solid #fb8e7e;
+}
+
+.title {
+  grid-area: t;
+  padding-bottom: 20px;
+  border-color: #6db6c5;
+  background-color: #323c4e;
+  text-align: center;
+  color: snow;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/*#8ec9bb*/
+button {
+  background-color: #a4dbe6;
+  font-size: 18px;
+  -webkit-transition: all 0.07s ease;
+  -o-transition: all 0.07s ease;
+  transition: all 0.07s ease;
+}
+
+.calculator button:hover {
+  -webkit-transform: rotate(5deg);
+  -ms-transform: rotate(5deg);
+  transform: rotate(5deg);
+  background-color: #fb8e7e;
+}
+
+.operations {
+  background-color: #7dc0ce;
+}
+
+.inputField {
+  padding: 20px;
+  width: 100%;
+  border: 0;
+  background-color: #c5d7c0;
+}
+
+.message {
+  width: 100%;
+  padding: 20px;
+  border-top: 5px solid #6db6c5;
+  background-color: #fb8e7e;
+  color: snow;
+  overflow: scroll;
+  font-size: 16px;
+}
+
+.left-info,
+.right-info {
+  padding: 1.8vw 1.3vw;
+  border: 0;
+  width: 5.21vw;
+  height: 5.21vw;
+  background-color: snow;
+  -webkit-transition: all 0.6s ease;
+  -o-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+  font-size: 16px;
+  text-align: center;
+  color: #fb8e7e;
+  line-height: 1.5vw;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+
+.left-info {
+  position: absolute;
+  top: 351px;
+  left: -5.21vw;
+}
+
+.left-info:hover {
+  width: 10.42vw;
+  left: -10.42vw;
+}
+
+.right-info {
+  position: absolute;
+  top: 351px;
+  right: -5.21vw;
+}
+
+.right-info:hover {
+  width: 10.42vw;
+  right: -10.42vw;
+}
+
+.show-left-info,
+.show-right-info {
+  height: 656px;
+  width: 15.625vw;
+  padding: 1.04vw 1.56vw;
+  border-top: 5px solid #6db6c5;
+  border-bottom: 5px solid #fb8e7e;
+  color: #323c4e;
+  text-align: left;
+  font-size: 14.7px;
+  line-height: 2em;
+}
+
+.show-left-info {
+  top: 44px;
+  left: -15.625vw;
+}
+
+.show-left-info:hover {
+  width: 15.625vw;
+  top: 44px;
+  left: -15.625vw;
+}
+
+.show-right-info {
+  top: 44px;
+  right: -15.625vw;
+}
+
+.show-right-info:hover {
+  width: 15.625vw;
+  top: 44px;
+  right: -15.625vw;
+}
+
+.error {
+  border: 5px solid #fa6e4f;
+}
+
+.enter {
+  border-top: 5px solid #6db6c5;
+  background-color: #fb8e7e;
+}
+
+.enter:hover {
+  background-color: #6db6c5;
+}
+
+.clear,
+.return,
+.save {
+  position: absolute;
+  top: 180px;
+  right: 5px;
+  padding: 0 3px;
+  border: 0;
+  background-color: #c5d7c0;
+  color: snow;
+  font-size: 18px;
+}
+
+.return {
+  right: 59.68px;
+  color: #fb8e7e;
+}
+
+.save {
+  right: 177.38px;
+  color: #6db6c5;
+}
+
+.return:hover,
+.save:hover {
+  color: snow;
+}
+
+p {
+  color: #7dc0ce;
+}
+
+.icon {
+  width: 40px;
+  height: auto;
+}
+
+button::-moz-focus-inner {
+  border: 0px;
+}
+
+button:focus {
+  outline: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .calculator {
+    height: 600px;
+    width: 90%;
+    border: 0;
+  }
+
+  .clear,
+  .return,
+  .save {
+    top: 24%;
+    font-size: 24px;
+    right: 5px;
+  }
+  .return {
+    right: 80px;
+  }
+  .save {
+    right: 240px;
+  }
+
+  button,
+  .inputField {
+    font-size: 26px;
+  }
+
+  .message {
+    font-size: 20px;
+  }
+
+  .left-info,
+  .right-info,
+  .left-info :hover,
+  .right-info:hover {
+    top: 600px;
+    left: 0;
+    width: 50%;
+    height: 100px;
+    padding: 35px;
+    font-size: 19px;
+  }
+
+  .right-info,
+  .right-info:hover {
+    left: 50%;
+  }
+
+  .show-left-info,
+  .show-right-info,
+  .show-left-info:hover,
+  .show-right-info:hover {
+    top: 600px;
+    left: 0;
+    width: 50%;
+    height: 800px;
+    font-size: 24px;
+    line-height: 36px;
+    border-top: 0;
+    padding: 20px;
+  }
+
+  .show-right-info,
+  .show-right-info:hover {
+    left: 50%;
+  }
+}
